@@ -33,11 +33,11 @@ function worker(arr) {
 }
 
 function makeWork(arrOfArr, func) {
-  let max = worker(arrOfArr[0]);
+  let max = func(arrOfArr[0]);
 
   for (let i = 0; i < arrOfArr.length; i++) {
-    if (worker(arrOfArr[i]) > max) {
-      max = worker(arrOfArr[i]);
+    if (func(arrOfArr[i]) > max) {
+      max = func(arrOfArr[i]);
     }
   }
   
@@ -46,8 +46,8 @@ function makeWork(arrOfArr, func) {
 
 // Задание 3
 function worker2(arr) {
-  let min = arr[i];
-  let max = arr[i];
+  let min = arr[0];
+  let max = arr[0];
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max) {
